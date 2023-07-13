@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Refresh Example</title>
+    <script>
+        // Function to refresh the page
+        function refreshPage() {
+            location.reload(); // Reload the current page
+        }
+
+        // Function to refresh the page every 5 seconds
+        function refreshEveryFiveSeconds() {
+            setInterval(refreshPage, 5000); // 5000 milliseconds = 5 seconds
+        }
+    </script>
+</head>
+<body onload="refreshEveryFiveSeconds()">
+    <h1>Page Refreshing...</h1>
+</body>
+</html>

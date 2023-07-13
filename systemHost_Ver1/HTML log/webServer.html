@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>    
+    <head>            
+        <title>ESP32 bulb Example</title>            
+        <script>                
+                function refreshPage() {                        
+                        location.reload();                
+                }          
+                function refreshEveryFiveSeconds() {                        
+                        setInterval(refreshPage, 100);                
+                }         
+                function turnOn() {               
+                        window.location.href = 'http://192.168.50.155/hello?sw=1';                
+                }                
+                function turnOff() {             
+                        window.location.href = 'http://192.168.50.155/hello?sw=0';                
+                        }            
+        </script>            
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">            
+        <style>              
+            .container {                
+                    display: flex;                
+                    flex-direction: column;            
+            }                  
+            .lightbulb {                            
+                    font-size: 64px;                            
+                    color: green;                
+                    margin-left: 10px;                    
+            }                        
+        </style>        
+    </head>        
+    <body onload="refreshEveryFiveSeconds()">                
+        <div class="container">                
+            <div class="monitor">                    
+                    <h2>Monitor</h2>                    
+                    <div class="fas fa-lightbulb lightbulb"/>                
+            </div>                
+            <div class="buttons">                    
+                    <h2>Button</h2>                    
+                    <button onclick="turnOn()">TurnOn</button>                        
+                    <button onclick="turnOff()">TurnOff</button>                 
+            </div>                
+            <div class="image">                    
+                    <h2>Camera</h2>                    
+                    <iframe src="http://192.168.50.175/pic"width="320"height="240" class="image"/>                
+            </div>                        
+        </div>                    
+    </body>
+</html>

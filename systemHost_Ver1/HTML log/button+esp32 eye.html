@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>ESP32 bulb Example</title>    
+        <script>        
+        function refreshPage() {            
+            location.reload();        
+        }  
+        function refreshEveryFiveSeconds() {            
+            setInterval(refreshPage, 1000);        
+        } 
+        function toggleLight() {            
+            alert('Light toggled!');        
+        }        
+        function turnOn() {   
+            window.location.href = 'http://192.168.1.102/hello?sw=1';        
+        }        
+        function turnOff() { 
+            window.location.href = 'http://192.168.1.102/hello?sw=0';        
+        }    
+        </script>    
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\">    
+        <style>        .lightbulb {            
+            font-size: 64px;            
+            color: black;        
+            }    
+            </style>
+        </head>
+        <body onload=\"refreshEveryFiveSeconds()\">    
+            <i class=\"fas fa-lightbulb lightbulb\"></i>    
+            <button onclick=\"turnOn()\">TurnOn</button>    
+            <button onclick=\"turnOff()\">TurnOff</button> 
+            <iframe src=\"http://192.168.1.110/pic\" width=\"320\" height=\"240\">
+            </iframe>
+        </body>
+</html>
